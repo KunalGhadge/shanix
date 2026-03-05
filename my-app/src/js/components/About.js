@@ -26,29 +26,14 @@ class About extends Component {
                         <TextSplit className="text_h1">About me</TextSplit>
                         <span className="tag_h1">&lt;h1/&gt;</span> <br/>
 
-                        <TextSplit className='left_side_text' splitBy="words">Hello, I am 20-year-old developer from
-                            Ukraine.</TextSplit>
-                        <TextSplit className='left_side_text' splitBy="words">Everything started with passion to web
-                            technologies (HTML, CSS). In 2016 I started to learn all about web development.</TextSplit>
-                        <TextSplit className='left_side_text' splitBy="words">Year later I got my first commercial work
-                            as a junior front-end developer in a small agency located in UA, Lviv. There I first got
-                            acquainted with Angular.</TextSplit>
-                        <TextSplit className='left_side_text' splitBy="words">Having worked there for a couple of months
-                            I changed the job. It was a German company and I was as freelancer for a long-term
-                            job.</TextSplit>
-                        <TextSplit className='left_side_text' splitBy="words">In multinational team we were building
-                            large Single Page Application like HR tool using
-                            React.</TextSplit>
-                        <TextSplit className='left_side_text' splitBy="words">Now I'm testing myself in freelance, but
-                            I'm open to any suggestions!</TextSplit>
+                        <TextSplit className='left_side_text' splitBy="words">I'm SHANIX! (formerly known as Sharonraj Vasave). I started as a content creator on YouTube in early 2016, making funny videos and mimicry.</TextSplit>
+                        <TextSplit className='left_side_text' splitBy="words">I soon dove into horror content—ghost pranks and urban legends—until 2017. Then, I shifted into Minecraft gaming and began teaching myself ethical hacking, app modding, and music production.</TextSplit>
+                        <TextSplit className='left_side_text' splitBy="words">I started producing hip-hop and trap beats, eventually discovering Phonk. My unique fusion of styles attracted an international audience, and I became known as India's first Phonk producer.</TextSplit>
+                        <TextSplit className='left_side_text' splitBy="words">After a brief hiatus, I returned in 2023, reignited by the trending Phonk scene. Now, I'm exploring fresh genres like Brazilian Funk, EDM, Krushclub, and Hardwave.</TextSplit>
                     </div>
                     <div className="player">
-                        <iframe className="insta_iframe" width="320" height="440" title="instaPage"
-                                src="https://www.instagram.com/p/BEl5FGdDP1R/embed" frameBorder="0"/>
-                        <iframe className="player_iframe" width="100%" frameBorder="no" title="music"
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/236967116&
-					color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&
-					show_reposts=false&show_teaser=true"/>
+                        <iframe className="player_iframe" width="100%" height="450" frameBorder="no" title="music"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1149955720&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"/>
                     </div>
                 </div>
                 <span className="tags">&nbsp;&nbsp;&nbsp;&lt;/body&gt; <br/> &lt;/html&gt;</span>
