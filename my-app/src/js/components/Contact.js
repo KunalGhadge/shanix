@@ -15,7 +15,7 @@ const logo = '..' + prefix + '/img/MyMarkerNew.png';
 
 let defaultProps = {
     /*GOOGLE MAPS PROPS*/
-    center: {lat: 49.8431, lng: 24.02607},
+    center: {lat: 19.0168, lng: 73.0965},
     zoom: 13,
     mapStyles: [
         {
@@ -286,7 +286,7 @@ const StyledMapWithAnInfoBox = compose(
                 options={{closeBoxURL: ``, enableEventPropagation: true}}
             >
                 <div style={defaultProps.mapInfoBoxStyle}>
-                    Heeey!=) <br/> Kredens cafe is my second home! <br/>
+                    Heeey!=) <br/> Kamothe is my second home! <br/>
                     Maybe I'm here at this moment! <br/>
                     So, you are welcome!:)
                 </div>

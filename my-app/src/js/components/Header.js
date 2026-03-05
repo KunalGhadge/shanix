@@ -36,7 +36,7 @@ class Header extends Component {
                         {/*<span className="o_letter">O</span>*/}
                         {/*<span className="m_letter">m</span>*/}
                     </div>
-                    <span>Ormaks</span>
+                    <span>SHANIX</span>
                 </div>
                 <div className={(this.state.isToggleOn ? "is-open " : " ") + "main_buttons"}>
                     <MyLink to={"/"} className=" fas fa-home"> home </MyLink>
@@ -46,12 +46,14 @@ class Header extends Component {
                     <MyLink to={"/contact"} className="far fa-envelope"> contact </MyLink>
                 </div>
                 <div className={(this.state.isToggleOn ? "is-open " : " ") + "social_buttons"}>
-                    <Link to="https://www.facebook.com/chytailo" target='_blank'><i
-                        className="fab fa-facebook-f"/></Link>
-                    <Link to="https://www.instagram.com/maks_chytailo" target='_blank'><i
+                    <Link to="https://x.com/SHANIXofc" target='_blank'><i
+                        className="fab fa-twitter"/></Link>
+                    <Link to="https://instagram.com/ishxronraj.exe" target='_blank'><i
                         className="fab fa-instagram"/></Link>
-                    <Link to="https://t.me/ormaks" target='_blank'><i
-                        className="fab fa-telegram-plane"/></Link>
+                    <Link to="https://www.youtube.com/@SHANIXMUSICS" target='_blank'><i
+                        className="fab fa-youtube"/></Link>
+                    <Link to="https://soundcloud.com/SHANIXOFC" target='_blank'><i
+                        className="fab fa-soundcloud"/></Link>
                 </div>
                 <div className="burger_menu">
                     <button className={(this.state.isToggleOn ? "is-open " : " ") + "menu-icon"}

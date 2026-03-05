@@ -9,29 +9,29 @@ import '../vendor/tagcanvas.min';
 import 'animate.css';
 
 const skills = [
-    "HTML5",
-    "CSS3",
-    "npm",
-    "Angular",
-    "ReactJS",
-    "JavaScript",
-    "TypeScript",
-    "C#",
-    "C++",
-    "Sass",
-    ".Net",
-    "jQuery",
-    "ES6",
-    "ES5",
-    "AJAX",
-    "Canvas",
-    "JSON",
-    "Git",
-    "Bootstrap",
-    "XML",
-    "SVG",
-    "Node.js",
-    "Gulp"
+    "Ethical Hacking",
+    "Music Production",
+    "Game Hacking",
+    "App Modding",
+    "Phonk",
+    "Brazilian Funk",
+    "EDM",
+    "Krushclub",
+    "Angelcore",
+    "Hardwave",
+    "Hip-hop",
+    "Trap Beats",
+    "SoundCloud",
+    "YouTube",
+    "Game Dev",
+    "Aesthetic Rap",
+    "Jungle Phonk",
+    "Rare Phonk",
+    "Unity",
+    "FL Studio",
+    "Ableton",
+    "Cybersecurity",
+    "Python"
 ];
 
 class Skills extends Component {
@@ -61,18 +61,13 @@ class Skills extends Component {
                         <TextSplit className="text_h1">Skills &</TextSplit>
                         <TextSplit className="text_h1">Experience</TextSplit>
                         <span className="tag_h1">&lt;h1/&gt;</span> <br/>
-                        <TextSplit splitBy="words" className='left_side_text'>Main area of my expertise is front end
-                            development and everything related with this side of
-                            web. HTML, CSS, JS(ES5,ES6), building Web Apps, ReactJS, building features, animations and
-                            just coding layouts.</TextSplit>
-                        <TextSplit className='left_side_text' splitBy="words">I have also some experience with Angular,
-                            Django,
-                            Node.js.</TextSplit>
-                        <TextSplit className='left_side_text' splitBy="words">Would like to know more?</TextSplit>
+                        <TextSplit splitBy="words" className='left_side_text'>My expertise spans music production, ethical hacking, and game development. I am known for pioneering Phonk music in India, blending traditional themes with rare genres like Jungle and Rare Phonk.</TextSplit>
+                        <TextSplit className='left_side_text' splitBy="words">I also have extensive experience in app modding, game hacking, and building immersive digital experiences.</TextSplit>
+                        <TextSplit className='left_side_text' splitBy="words">Want to collaborate or learn more?</TextSplit>
                         <p className='left_side_text'>
                             <TextSplit splitBy="words">Please check my</TextSplit>
-                            <TextSplit tagName='link' splitBy="words" to="https://www.linkedin.com/in/ormaks/"
-                                       target='_blank' className='left_side_link'>LinkedIn</TextSplit>
+                            <TextSplit tagName='link' splitBy="words" to="https://open.spotify.com/artist/72E9kEuXfIHx2MpFbLEUlU"
+                                       target='_blank' className='left_side_link'>Spotify</TextSplit>
                             <TextSplit splitBy='words'>profile or just</TextSplit>
                             <TextSplit tagName='link' splitBy="words" to={prefix + "/contact"}
                                        className='left_side_link'>contact</TextSplit>
