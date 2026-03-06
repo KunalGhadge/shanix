@@ -325,12 +325,15 @@ class Contact extends Component {
         this.state = {
             email: '',
             msg: '',
-
+            name: '',
+            subject: '',
             touched: {
                 email: false,
                 msg: false,
             },
-            isLoading: true
+            isLoading: true,
+            status: "",
+            letters: []
         };
     };
 
@@ -339,26 +342,27 @@ class Contact extends Component {
     }
 
     handleMsgChange = (evt) => {
-        this.setState({ msg: evt.target.value });
+        const val = evt.target.value;
+        this.setState({ msg: val });
 
-
-        const letters = evt.target.value.split('');
+        const letters = val.split('');
         const arr = [];
         letters.forEach((l, i) => {
             arr.push(<VelocityLetter letter={l} key={i} />)
         });
-        this.setState(() => ({ letters: arr }))
+        this.setState({ letters: arr });
     };
 
     handleEmailChange = (evt) => {
-        this.setState({ email: evt.target.value });
+        const val = evt.target.value;
+        this.setState({ email: val });
 
-        const letters = evt.target.value.split('');
+        const letters = val.split('');
         const arr = [];
         letters.forEach((l, i) => {
             arr.push(<VelocityLetter letter={l} key={i} />)
         });
-        this.setState(() => ({ letters: arr }))
+        this.setState({ letters: arr });
     };
     handleBlur = (field) => () => {
         this.setState({
@@ -367,17 +371,42 @@ class Contact extends Component {
     };
     /*END VALIDATION p1*/
 
-    /*flyLetter ANIMATION*/
-    state = {
-        letters: [],
-    };
-    onChange = (e) => {
-        const letters = e.target.value.split('');
+    onInputChange = (e) => {
+        const { name, value } = e.target;
+        this.setState({ [name]: value });
+
+        const letters = value.split('');
         const arr = [];
         letters.forEach((l, i) => {
             arr.push(<VelocityLetter letter={l} key={i} />)
         });
-        this.setState(() => ({ letters: arr }))
+        this.setState({ letters: arr });
+    };
+
+    submitForm = (ev) => {
+        ev.preventDefault();
+        const form = ev.target;
+        const data = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open(form.method, form.action);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.status === 200) {
+                form.reset();
+                this.setState({
+                    status: "SUCCESS",
+                    email: '',
+                    msg: '',
+                    name: '',
+                    subject: '',
+                    letters: []
+                });
+            } else {
+                this.setState({ status: "ERROR" });
+            }
+        };
+        xhr.send(data);
     };
 
     /*flyLetter ANIMATION*/
@@ -408,10 +437,22 @@ class Contact extends Component {
                         <span className="tag_h1">&lt;h1&gt;</span> <br />
                         <TextSplit className="text_h1">Contact</TextSplit>
                         <span className="tag_h1">&lt;h1/&gt;</span> <br />
-                        <form id="contact" action="https://formspree.io/f/mpqyzpnv" method="POST" autoComplete="off">
+                        <form
+                            id="contact"
+                            onSubmit={this.submitForm}
+                            action="https://formspree.io/f/mpqyzpnv"
+                            method="POST"
+                            autoComplete="off"
+                        >
                             <div className="input_row">
                                 <div className="half">
-                                    <input onChange={this.onChange} placeholder="Name" type="text" name="name" />
+                                    <input
+                                        onChange={this.onInputChange}
+                                        placeholder="Name"
+                                        type="text"
+                                        name="name"
+                                        value={this.state.name}
+                                    />
                                 </div>
                                 <div className="half">
                                     <input
@@ -427,8 +468,13 @@ class Contact extends Component {
                                 </div>
                             </div>
                             <div className="input_row">
-                                <input onChange={this.onChange} placeholder="Subject" type="text"
-                                    name="subject" />
+                                <input
+                                    onChange={this.onInputChange}
+                                    placeholder="Subject"
+                                    type="text"
+                                    name="subject"
+                                    value={this.state.subject}
+                                />
                             </div>
                             <div className="input_row">
                                 <textarea placeholder="Message" name="msg" required
@@ -440,7 +486,12 @@ class Contact extends Component {
                                     onBlur={this.handleBlur('msg')} />
                             </div>
                             <div className="input_submit">
-                                <input id="submit" type="submit" value="SEND" />
+                                {this.state.status === "SUCCESS" ?
+                                    <p className="success_message">Thanks! Your message has been sent successfully. SHANIX! will get back to you soon.</p>
+                                    :
+                                    <input id="submit" type="submit" value="SEND" />
+                                }
+                                {this.state.status === "ERROR" && <p className="error_message">Ooops! There was an error. Please try again.</p>}
                             </div>
                         </form>
                     </div>
