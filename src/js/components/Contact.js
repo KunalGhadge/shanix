@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {compose, withProps, withStateHandlers} from "recompose";
-import {GoogleMap, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
+import React, { Component } from 'react';
+import { compose, withProps, withStateHandlers } from "recompose";
+import { GoogleMap, Marker, withGoogleMap, withScriptjs } from "react-google-maps";
 import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
-import {VelocityComponent} from 'velocity-react';
+import { VelocityComponent } from 'velocity-react';
 import validator from 'validator';
 import PreloaderElement from '../containers/PreloaderElement';
 import TextSplit from '../containers/TextAnimation';
@@ -15,7 +15,7 @@ const logo = prefix + '/img/MyMarkerNew.png';
 
 let defaultProps = {
     /*GOOGLE MAPS PROPS*/
-    center: {lat: 19.0168, lng: 73.0965},
+    center: { lat: 19.0168, lng: 73.0965 },
     zoom: 13,
     mapStyles: [
         {
@@ -254,14 +254,14 @@ let defaultProps = {
 const StyledMapWithAnInfoBox = compose(
     withProps({
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBa7trDSsEedbuHDCqBFTLtJIAtSHYrg9s&v=3.exp&libraries=geometry,drawing,places",
-        loadingElement: <div style={{height: `100%`, width: '100%'}}/>,
-        containerElement: <div style={{width: '100%'}}/>,
-        mapElement: <div style={{height: `100%`, width: '100%'}}/>
+        loadingElement: <div style={{ height: `100%`, width: '100%' }} />,
+        containerElement: <div style={{ width: '100%' }} />,
+        mapElement: <div style={{ height: `100%`, width: '100%' }} />
     }),
     withStateHandlers(() => ({
         isOpen: false,
     }), {
-        onToggleOpen: ({isOpen}) => () => ({
+        onToggleOpen: ({ isOpen }) => () => ({
             isOpen: !isOpen,
         })
     }),
@@ -271,7 +271,7 @@ const StyledMapWithAnInfoBox = compose(
     <GoogleMap
         defaultZoom={defaultProps.zoom}
         defaultCenter={defaultProps.center}
-        defaultOptions={{styles: defaultProps.mapStyles}}
+        defaultOptions={{ styles: defaultProps.mapStyles }}
     >
         <Marker
             position={defaultProps.center}
@@ -281,26 +281,26 @@ const StyledMapWithAnInfoBox = compose(
             }}
         >
             {props.isOpen &&
-            <InfoBox
-                onCloseClick={props.onToggleOpen}
-                options={{closeBoxURL: ``, enableEventPropagation: true}}
-            >
-                <div style={defaultProps.mapInfoBoxStyle}>
-                    Heeey!=) <br/> Kamothe is my second home! <br/>
-                    Maybe I'm here at this moment! <br/>
-                    So, you are welcome!:)
-                </div>
-            </InfoBox>}
+                <InfoBox
+                    onCloseClick={props.onToggleOpen}
+                    options={{ closeBoxURL: ``, enableEventPropagation: true }}
+                >
+                    <div style={defaultProps.mapInfoBoxStyle}>
+                        Heeey!=) <br /> Kamothe is my second home! <br />
+                        Maybe I'm here at this moment! <br />
+                        So, you are welcome!:)
+                    </div>
+                </InfoBox>}
         </Marker>
     </GoogleMap>
 );
 /*END GOOGLE MAPS FUNC*/
 
 /*flyLetter ANIMATION*/
-const VelocityLetter = ({letter}) => (
+const VelocityLetter = ({ letter }) => (
     <VelocityComponent
         runOnMount
-        animation={{opacity: 1, marginTop: 0}}
+        animation={{ opacity: 1, marginTop: 0 }}
         duration={1000}
     >
         <p style={defaultProps.flyLetterStyles.letter}>{letter}</p>
@@ -335,34 +335,34 @@ class Contact extends Component {
     };
 
     componentDidMount() {
-        setTimeout(() => this.setState({isLoading: false}), 1500);
+        setTimeout(() => this.setState({ isLoading: false }), 1500);
     }
 
     handleMsgChange = (evt) => {
-        this.setState({msg: evt.target.value});
+        this.setState({ msg: evt.target.value });
 
 
         const letters = evt.target.value.split('');
         const arr = [];
         letters.forEach((l, i) => {
-            arr.push(<VelocityLetter letter={l} key={i}/>)
+            arr.push(<VelocityLetter letter={l} key={i} />)
         });
-        this.setState(() => ({letters: arr}))
+        this.setState(() => ({ letters: arr }))
     };
 
     handleEmailChange = (evt) => {
-        this.setState({email: evt.target.value});
+        this.setState({ email: evt.target.value });
 
         const letters = evt.target.value.split('');
         const arr = [];
         letters.forEach((l, i) => {
-            arr.push(<VelocityLetter letter={l} key={i}/>)
+            arr.push(<VelocityLetter letter={l} key={i} />)
         });
-        this.setState(() => ({letters: arr}))
+        this.setState(() => ({ letters: arr }))
     };
     handleBlur = (field) => () => {
         this.setState({
-            touched: {...this.state.touched, [field]: true},
+            touched: { ...this.state.touched, [field]: true },
         });
     };
     /*END VALIDATION p1*/
@@ -375,9 +375,9 @@ class Contact extends Component {
         const letters = e.target.value.split('');
         const arr = [];
         letters.forEach((l, i) => {
-            arr.push(<VelocityLetter letter={l} key={i}/>)
+            arr.push(<VelocityLetter letter={l} key={i} />)
         });
-        this.setState(() => ({letters: arr}))
+        this.setState(() => ({ letters: arr }))
     };
 
     /*flyLetter ANIMATION*/
@@ -393,7 +393,7 @@ class Contact extends Component {
         };
         /*END VALIDATION p1*/
         if (this.state.isLoading) {
-            return <PreloaderElement/>
+            return <PreloaderElement />
         }
         return (
             <div className="contact_content">
@@ -405,19 +405,19 @@ class Contact extends Component {
                 <span className="tags">&nbsp;&nbsp;&nbsp;&lt;body&gt;</span>
                 <div className="contact_main">
                     <div className="left_side">
-                        <span className="tag_h1">&lt;h1&gt;</span> <br/>
+                        <span className="tag_h1">&lt;h1&gt;</span> <br />
                         <TextSplit className="text_h1">Contact</TextSplit>
-                        <span className="tag_h1">&lt;h1/&gt;</span> <br/>
-                        <TextSplit splitBy='words' className='left_side_text'>This form is UI Demo</TextSplit>
-                        <form id="contact" autoComplete="off">
+                        <span className="tag_h1">&lt;h1/&gt;</span> <br />
+                        <form id="contact" action="https://formspree.io/f/mpqyzpnv" method="POST" autoComplete="off">
                             <div className="input_row">
                                 <div className="half">
-                                    <input onChange={this.onChange} placeholder="Name" type="text" name="name"/>
+                                    <input onChange={this.onChange} placeholder="Name" type="text" name="name" />
                                 </div>
                                 <div className="half">
                                     <input
                                         className={shouldMarkError('email') ? "error" : ""}
                                         type="email"
+                                        name="email"
                                         placeholder="Email"
                                         value={this.state.email}
                                         onChange={this.handleEmailChange}
@@ -428,27 +428,27 @@ class Contact extends Component {
                             </div>
                             <div className="input_row">
                                 <input onChange={this.onChange} placeholder="Subject" type="text"
-                                       name="subject"/>
+                                    name="subject" />
                             </div>
                             <div className="input_row">
-							<textarea placeholder="Message" name="msg" required
-                                      type="text"
-                                      minLength="10"
-                                      className={shouldMarkError('msg') ? "error" : ""}
-                                      value={this.state.msg}
-                                      onChange={this.handleMsgChange}
-                                      onBlur={this.handleBlur('msg')}/>
+                                <textarea placeholder="Message" name="msg" required
+                                    type="text"
+                                    minLength="10"
+                                    className={shouldMarkError('msg') ? "error" : ""}
+                                    value={this.state.msg}
+                                    onChange={this.handleMsgChange}
+                                    onBlur={this.handleBlur('msg')} />
                             </div>
                             <div className="input_submit">
-                                <input id="submit" type="submit" value="SEND"/>
+                                <input id="submit" type="submit" value="SEND" />
                             </div>
                         </form>
                     </div>
                     <div className="right_side">
-                        <StyledMapWithAnInfoBox/>
+                        <StyledMapWithAnInfoBox />
                     </div>
                 </div>
-                <span className="tags">&nbsp;&nbsp;&nbsp;&lt;/body&gt; <br/> &lt;/html&gt;</span>
+                <span className="tags">&nbsp;&nbsp;&nbsp;&lt;/body&gt; <br /> &lt;/html&gt;</span>
             </div>
         )
     }
