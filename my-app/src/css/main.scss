@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   cursor: url("../img/cursor.cur"), pointer !important;
 }
 
@@ -12,11 +13,16 @@ body {
   font-family: sans-serif;
   overflow: hidden;
   background: #252627;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently */
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently */
   color: #fff;
 }
 
@@ -110,29 +116,29 @@ body .infoBox {
   body {
     overflow: inherit;
   }
+
   .tags {
     margin-left: 5px;
   }
+
   .text_h1 {
     font-size: 35px;
     line-height: 30px;
   }
 }
 
-@media only screen and (min-width: 481px /*768px*/
+@media only screen and (min-width: 481px
+  /*768px*/
 ) and (max-width: 1024px) {
   body {
     overflow: inherit;
   }
+
   .tags {
     margin-left: 10px;
   }
 }
 
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1224px) {}
 
-}
-
-@media only screen and (min-width: 1824px) {
-
-}
+@media only screen and (min-width: 1824px) {}

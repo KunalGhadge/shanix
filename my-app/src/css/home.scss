@@ -52,56 +52,60 @@ $mainColor: #08fdd8;
       }
     }
   }
+
   /* |||         RIGHT SIDE         |||*/
   .right_side {
     position: absolute;
-    right: -123px;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none;
+
     img {
       position: absolute;
       right: 145px;
       top: 30px;
     }
+
     svg {
       &.logo {
-        width: 759px;
-        height: 286px;
-        margin-top: 155px;
+        width: 100%;
+        height: auto;
         font-family: 'MyLogo', cursive;
         text-shadow: -1px 0 28px #08fdd842;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
         transform: rotate(45deg);
 
-        > text {
+        >text {
           font-size: 250px;
+
           &.path {
             fill: #222324;
             stroke: $mainColor;
           }
         }
       }
-      &.logo_mirror > text.path {
+
+      &.logo_mirror>text.path {
         fill: rgba(37, 38, 39, 0.5);
         stroke: rgba(8, 253, 216, 0.04);
       }
 
-      &.logo > .path,
-      &.logo_mirror > .path {
+      &.logo>.path,
+      &.logo_mirror>.path {
         stroke-dasharray: 1200;
         stroke-dashoffset: 0;
-        -webkit-animation: dash 5s linear alternate both, neonBlink 5s infinite;
-        -o-animation: dash 5s linear alternate both, neonBlink 5s infinite;
-        -moz-animation: dash 5s linear alternate both, neonBlink 5s infinite;
         animation: dash 5s linear alternate both, neonBlink 5s infinite;
       }
 
       &.logo_mirror {
-        width: 713px;
-        height: 224px;
+        width: 100%;
+        height: auto;
         position: absolute;
-        top: 314px;
-        right: 156px;
-
+        bottom: 0;
         font-family: 'MyLogo', cursive;
         transform: rotate(-135deg) rotateY(180deg);
         -webkit-filter: blur(2px);
@@ -116,9 +120,11 @@ $mainColor: #08fdd8;
     stroke-dashoffset: 1200px;
     fill-opacity: 0;
   }
+
   80% {
     fill-opacity: 0;
   }
+
   100% {
     stroke-dashoffset: 0;
     fill-opacity: 1;
@@ -130,9 +136,11 @@ $mainColor: #08fdd8;
     stroke-dashoffset: 1200px;
     fill-opacity: 0
   }
+
   80% {
     fill-opacity: 0
   }
+
   100% {
     stroke-dashoffset: 0;
     fill-opacity: 1;
@@ -144,9 +152,11 @@ $mainColor: #08fdd8;
     stroke-dashoffset: 1200px;
     fill-opacity: 0
   }
+
   80% {
     fill-opacity: 0
   }
+
   100% {
     stroke-dashoffset: 0;
     fill-opacity: 1
@@ -157,42 +167,55 @@ $mainColor: #08fdd8;
   0% {
     opacity: 1;
   }
+
   10% {
     opacity: .6;
   }
+
   12% {
     opacity: 1;
   }
+
   15% {
     opacity: .4;
   }
+
   17% {
     opacity: 1;
   }
+
   18% {
     opacity: .3;
   }
+
   19% {
     opacity: 1;
   }
+
   29% {
     opacity: 1;
   }
+
   30% {
     opacity: .9;
   }
+
   33% {
     opacity: 1;
   }
+
   89% {
     opacity: 1;
   }
+
   91% {
     opacity: .7;
   }
+
   94% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
   }
@@ -202,42 +225,55 @@ $mainColor: #08fdd8;
   0% {
     opacity: 1;
   }
+
   10% {
     opacity: .6;
   }
+
   12% {
     opacity: 1;
   }
+
   15% {
     opacity: .4;
   }
+
   17% {
     opacity: 1;
   }
+
   18% {
     opacity: .3;
   }
+
   19% {
     opacity: 1;
   }
+
   29% {
     opacity: 1;
   }
+
   30% {
     opacity: .9;
   }
+
   33% {
     opacity: 1;
   }
+
   89% {
     opacity: 1;
   }
+
   91% {
     opacity: .7;
   }
+
   94% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
   }
@@ -247,42 +283,55 @@ $mainColor: #08fdd8;
   0% {
     opacity: 1;
   }
+
   10% {
     opacity: .6;
   }
+
   12% {
     opacity: 1;
   }
+
   15% {
     opacity: .4;
   }
+
   17% {
     opacity: 1;
   }
+
   18% {
     opacity: .3;
   }
+
   19% {
     opacity: 1;
   }
+
   29% {
     opacity: 1;
   }
+
   30% {
     opacity: .9;
   }
+
   33% {
     opacity: 1;
   }
+
   89% {
     opacity: 1;
   }
+
   91% {
     opacity: .7;
   }
+
   94% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
   }
@@ -311,6 +360,7 @@ $mainColor: #08fdd8;
         }
       }
     }
+
     .right_side {
       position: absolute;
       right: 0;
@@ -320,12 +370,14 @@ $mainColor: #08fdd8;
       width: 100%;
       justify-content: center;
       align-items: center;
+
       img {
         display: block;
         width: 80%;
         opacity: 0.02;
         position: initial;
       }
+
       svg.logo,
       svg.logo_mirror {
         display: none;
@@ -334,7 +386,8 @@ $mainColor: #08fdd8;
   }
 }
 
-@media only screen and (min-width: 481px /*768px*/
+@media only screen and (min-width: 481px
+  /*768px*/
 ) and (max-width: 1024px) {
   .home_content {
     width: 100%;
@@ -342,6 +395,7 @@ $mainColor: #08fdd8;
     min-height: 768px;
     margin: 0;
     position: relative;
+
     .left_side {
       height: auto;
       top: 70px;
@@ -351,6 +405,7 @@ $mainColor: #08fdd8;
         margin-left: 9%;
       }
     }
+
     .right_side {
       position: absolute;
       right: 0;
@@ -360,15 +415,18 @@ $mainColor: #08fdd8;
       width: 100%;
       justify-content: center;
       align-items: center;
+
       img {
         display: block;
         position: initial;
       }
+
       svg.logo {
         transform: rotate(0deg);
         height: 232px;
         margin-top: -100px;
       }
+
       svg.logo_mirror {
         display: none;
       }
@@ -376,10 +434,6 @@ $mainColor: #08fdd8;
   }
 }
 
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1224px) {}
 
-}
-
-@media only screen and (min-width: 1824px) {
-
-}
+@media only screen and (min-width: 1824px) {}

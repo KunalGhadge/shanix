@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+# If you want to keep the build folder in the repo (common for some simple portfolios)
+# static/js/bundle.js
+# static/css/main.css
