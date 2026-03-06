@@ -11,7 +11,7 @@ import '../../css/contact.scss';
 import prefix from "./Config";
 
 
-const logo = '..' + prefix + '/img/MyMarkerNew.png';
+const logo = prefix + '/img/MyMarkerNew.png';
 
 let defaultProps = {
     /*GOOGLE MAPS PROPS*/
