@@ -38,7 +38,7 @@ class Header extends Component {
                         {/*<span className="o_letter">O</span>*/}
                         {/*<span className="m_letter">m</span>*/}
                     </div>
-                    <span>SHANIX</span>
+                    <span>SHANIX!</span>
                 </div>
                 <div className={(this.state.isToggleOn ? "is-open " : " ") + "main_buttons"}>
                     <MyLink to={"/"} className=" fa fa-home"> home </MyLink>

@@ -29,7 +29,7 @@ class About extends Component {
                         <div className="bio_highlights">
                             <div className="bio_item">
                                 <i className="fa fa-microphone-alt"></i>
-                                <TextSplit className='highlight_text' splitBy="words">Pioneer Phonk Producer from India with a unique fusion of international trap and ritual themes.</TextSplit>
+                                <TextSplit className='highlight_text' splitBy="words">India's First Phonk Producer from India with a unique fusion of international trap and ritual themes.</TextSplit>
                             </div>
                             <div className="bio_item">
                                 <i className="fa fa-user-secret"></i>

@@ -63,7 +63,7 @@ class Skills extends Component {
                         <span className="tag_h1">&lt;h1/&gt;</span> <br />
 
                         <div className="skills_highlights">
-                            <TextSplit splitBy="words" className='highlight_desc'>Expertise spanning music production, ethical hacking, and game development. Pioneering Phonk music in India, blending traditional themes with modern digital crafts.</TextSplit>
+                            <TextSplit splitBy="words" className='highlight_desc'>Expertise spanning music production, ethical hacking, and game development. India's First Phonk producer, blending traditional themes with modern digital crafts.</TextSplit>
 
                             <div className="skills_list">
                                 <div className="skill_item">

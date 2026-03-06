@@ -11,7 +11,7 @@ let PreloaderElement = () => (
 		</div>
 		<div className="wrapper">
 			<div className="container">
-				<div className="label one">SHANIX is thinking...</div>
+				<div className="label one">SHANIX! is thinking...</div>
 				<div className="progress-bar">
 					<div className="progress fill-1">
 						<div className="glow" />
