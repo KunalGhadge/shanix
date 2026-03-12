@@ -15,8 +15,8 @@ const logo = prefix + '/img/MyMarkerNew.png';
 
 let defaultProps = {
     /*GOOGLE MAPS PROPS*/
-    center: { lat: 19.0168, lng: 73.0965 },
-    zoom: 13,
+    center: { lat: 20.5937, lng: 78.9629 },
+    zoom: 5,
     mapStyles: [
         {
             "featureType": "all",
@@ -286,7 +286,7 @@ const StyledMapWithAnInfoBox = compose(
                     options={{ closeBoxURL: ``, enableEventPropagation: true }}
                 >
                     <div style={defaultProps.mapInfoBoxStyle}>
-                        Heeey!=) <br /> Kamothe is my second home! <br />
+                        Heeey!=) <br /> India is my home! <br />
                         Maybe I'm here at this moment! <br />
                         So, you are welcome!:)
                     </div>
@@ -506,3 +506,4 @@ class Contact extends Component {
 }
 
 export default Contact;
+
